@@ -101,11 +101,9 @@ const unnifiedServer = (req, res) => {
 // Define handlers
 const handlers = {}
 
-// Define sample handlers
-handlers.sample = (data, callback) => {
-    callback(406, {
-        'name': 'sample handler'
-    });
+// Define ping handlers
+handlers.ping = (data, callback) => {
+    callback(200);
 };
 
 // Not found handlers
@@ -115,6 +113,6 @@ handlers.notFound = (data, callback) => {
 
 // Define a request router
 const router = {
-    'sample': handlers.sample
+    'ping': handlers.ping
 }
 
